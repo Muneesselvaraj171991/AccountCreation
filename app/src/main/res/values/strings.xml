@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AccountCreation</string>
+    <string name="full_name">Full Name</string>
+    <string name="address">Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="next">Next</string>
+    <string name="create_account">Create Account</string>
+    <string name="back">Back</string>
+
+</resources>
