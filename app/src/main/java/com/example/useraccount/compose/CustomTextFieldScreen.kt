@@ -1,5 +1,6 @@
 package com.example.useraccount.compose
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -22,6 +23,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.useraccount.R
@@ -73,8 +75,14 @@ fun CustomTextFieldScreen(
                 .fillMaxWidth()
                 .padding(all = 16.dp),
         )
-        Button(
-            onClick = { onNavigateScreen(textValue) },
+            val context = LocalContext.current
+
+            Button(
+            onClick = {
+                    if(textValue.isEmpty()){
+                        Toast.makeText(context, "You must enter $toolbarLabel",Toast.LENGTH_LONG).show()
+                    }else{
+                        onNavigateScreen(textValue) }},
             modifier = Modifier.padding(all = 16.dp),
         ) {
             Text(text = buttonLabel)

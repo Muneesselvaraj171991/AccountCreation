@@ -12,9 +12,9 @@ class UserAccountViewModel @Inject constructor(
     private val navigator: Navigator,
 ) : ViewModel() {
 
-    private var mFullName = ""
-    private var mAddress = ""
-    private var mPhoneNumber = ""
+    private var mFullName : String? = null
+    private var mAddress : String? = null
+    private var mPhoneNumber : String? = null
 
     fun onBackClick() {
         navigator.popBackStack()
@@ -23,14 +23,12 @@ class UserAccountViewModel @Inject constructor(
 
     fun onNavigateToAddressScreen(name: String) {
         mFullName = name
-            navigator.navigate(
-                NavigationAddressRoute)
+        navigator.navigate(NavigationAddressRoute)
     }
 
     fun onNavigateToPhoneNumberScreen(address: String) {
         mAddress = address
-        navigator.navigate(
-            NavigationPhoneNumberRoute)
+        navigator.navigate(NavigationPhoneNumberRoute)
     }
 
     fun onAccountCreate(phonenumber: String) {
