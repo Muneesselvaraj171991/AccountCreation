@@ -51,10 +51,11 @@ fun CustomTextFieldScreen(
                 modifier = Modifier.fillMaxWidth(),
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
-                        Icon(imageVector = Icons.Default.ArrowBack, contentDescription = stringResource(
+                        if(toolbarLabel != stringResource(id = R.string.full_name)){
+                            Icon(imageVector = Icons.Default.ArrowBack, contentDescription = stringResource(
                             id = R.string.back
                         ))
-                    }
+                    }}
                 }
             )
         }
